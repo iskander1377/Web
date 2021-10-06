@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Каримов 320</title>
+</head>
+<body>
+		<script>
+			let tek = 5;
+			function isl(str) {
+				if (str.length==0) {
+    document.getElementById("isk").innerHTML="";
+    return;}
+  if (window.XMLHttpRequest) {
+    xmlhttp=new XMLHttpRequest();
+  } else {  
+    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");}
+  xmlhttp.onreadystatechange=function() {
+    if (this.readyState==4 && this.status==200) {
+      document.getElementById("isk").innerHTML=this.responseText;}}
+			   xmlhttp.open("GET","rss.php?tek="+tek,true);
+			   xmlhttp.send();
+			   tek+=5;}
+		 </script>
+	</head>
+	<body>
+		<h1>Задание 1</h1>
+			<h2>«Спартак» на выезде обыграл «Ахмат» в матче РПЛ</h2>
+			<img src="https://icdn.lenta.ru/images/2021/10/03/20/20211003202158997/pic_0259f2c4b7751ade3297de80b0c71753.jpg"><br>
+			<a href="https://lenta.ru/news/2021/10/03/akhmatrpl/">Ссылка на статью</a><br>
+			<h2>Шакира и Клаудия Шиффер оказались связаны с офшорными активами</h2>
+			<img src="https://icdn.lenta.ru/images/2021/10/03/20/20211003205321463/pic_f12239c67b7d7e736ad42db0fe00b058.jpg"><br>
+			<a href="https://lenta.ru/news/2021/10/03/shakirra/">Ссылка на статью</a><br>
+			<h2>В Подмосковье разбился легкомоторный вертолет</h2>
+			<img src="https://icdn.lenta.ru/images/2021/10/03/20/20211003204051274/pic_fbc7c752c81464179859924c38ca79ef.jpg"><br>
+			<a href="https://lenta.ru/news/2021/10/03/robinson/">Ссылка на статью</a><br>
+			<h2>Европейские компании обанкротились из-за рекордных цен на газ</h2>
+			<img src="https://icdn.lenta.ru/images/2021/10/03/17/20211003174929683/pic_96703c0974be71d6927e054d2d688efc.jpg" ><br>
+			<a href="https://lenta.ru/news/2021/10/03/bankrot/">Ссылка на статью</a><br>
+			<h2>В Китае предсказали появление нового «вируса Х»</h2>
+			<img src="https://icdn.lenta.ru/images/2021/10/03/21/20211003211722050/pic_ec3a9afc2fca12fba78cdc8261e4451d.jpg" ><br>
+			<a href="https://lenta.ru/news/2021/10/03/virus/">Ссылка на статью</a><br>
+
+		<span id = "isk"></span>
+		<form>
+			<input onclick = "isl(this.value)" type="button" value="Показать еще" id="b">
+		</form>
+		<br>
+	</body>
+	</html> 

@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Каримов 320</title>
+</head>
+<body>
+
+	<h2>ФИЛЬМ ДЮНА</h2>
+		<img src="https://i.artfile.ru/3645x2050_1527398_[www.ArtFile.ru].jpg" alt="" width="400px">
+	<p>Оставьте отзыв на фильм:</p>
+	<form method="get">
+		<p>Имя <input type="text" name="name" id="name"/></p>
+		<p>EMAIL <input type="text" name="email" id="email"/></p>
+		<p>Отзыв <input type="text" name="comment" id="comment"/></p>
+		<input onclick = "ot(this.value)" type="button" value="Отправить">
+	</form>
+	<span id = "tut"></span> 
+	<script>
+		let tek = 3;
+	window.addEventListener("load",function() {
+  var request = new XMLHttpRequest();
+  request.open('GET','com.php',true);
+  request.addEventListener('readystatechange', function() {
+    if ((request.readyState==4) && (request.status==200)) {
+      var welcome = document.getElementById('tut');
+      welcome.innerHTML = request.responseText;
+    }
+  });
+request.send();
+});
+    function ot(str) {
+      alert("Отзыв отправлен!");
+		if (str.length==0) {
+    document.getElementById("tut").innerHTML="";
+    return;
+  }
+  if (window.XMLHttpRequest) {
+    xmlhttp=new XMLHttpRequest();
+  } else {  
+    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+  xmlhttp.onreadystatechange=function() {
+    if (this.readyState==4 && this.status==200) {
+      document.getElementById("tut").innerHTML=this.responseText;
+    }
+
+  }
+  tek+=1;
+  var nam = document.getElementById("name").value, email = document.getElementById("email").value, comment=document.getElementById("comment").value;
+var variables = "tek="+tek+"&name="+nam+"&email="+email+"&comment="+comment;
+			   xmlhttp.open("GET","comm.php?"+variables,true);
+			   xmlhttp.send();
+}
+</script>
+
+</body>
+</html> 
